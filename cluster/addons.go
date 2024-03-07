@@ -675,7 +675,7 @@ func (c *Cluster) deployIngress(ctx context.Context, data map[string]interface{}
 		return err
 	}
 	// ingress runs in it's own namespace, so it needs it's own role/rolebinding for PSP
-	if c.Authorization.Mode == services.RBACAuthorizationMode && c.Services.KubeAPI.PodSecurityPolicy {
+	if c.Authorization.Mode == services.RBACAuthorizationMode {
 		if err := authz.ApplyDefaultPodSecurityPolicyRole(ctx, c.LocalKubeConfigPath, NginxIngressAddonAppName, c.K8sWrapTransport); err != nil {
 			return fmt.Errorf("Failed to apply default PodSecurityPolicy ClusterRole and ClusterRoleBinding: %v", err)
 		}
