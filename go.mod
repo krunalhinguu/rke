@@ -2,7 +2,7 @@ module github.com/rancher/rke
 
 go 1.21
 
-replace github.com/rancher/norman => github.com/krunalhinguu/norman v1.29.0-rancher3
+replace github.com/rancher/norman => github.com/krunalhinguu/norman v1.29.0-rancher5
 
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
